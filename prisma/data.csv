@@ -1,0 +1,244 @@
+Laufnummer,Zählerpunkt,Beschreibung,Gebäude,Bauteil,Raum,Zählernummer,Kunde,Übergeordneter Zählerpunkt,Kundenzählpunkt,Bemerkung,Zählerstand 30.09.2024
+1,H-10,Strom,Hotel ,,uv tiefgarage ,FC7251500012,Eitco,,,eitco wallbox links,"3894,4"
+2,H-20,Strom,Hotel ,,uv tiefgarage ,FC7251500003,Eitco,,,eitco wallbox rechts,"6948,8"
+3,RW2-10,Strom,RW2,H,BB4 H-1,AA5432930001,Ostermann,,,,"465006,6"
+4,RW2-20,Strom,RW2,H,BB4 H-1,AA5433070014,DLGI,,,,"117271,8"
+5,RW2-40,Strom,RW2,H,BB4 H-1,AA5433070015,Eitco,,,,"479966,2"
+6,RW2-50,Strom,RW2,H,BB4 H-1,AA5433070013,Trimble Germany GmbH,,,,"244985,5"
+7,RW2-30,Strom,RW2,H,BB4 H-1,AA5433070012,Eitco,,,,"70457,8"
+8,RW2-60,Strom,RW2,H,BB4 H-1,AA5433070011,TGE,,,,"160,5"
+9,RW2-90,Strom,RW2,H,BB4 H-1,AA5432930002,Deka,,,Allg. Strom,"471763,9"
+10,RW2-80,Strom,RW2,H,BB4 H-1,RK4283270004,Deka,,,Aufzug 1,"22974,1"
+11,RW2-70,Strom,RW2,H,BB4 H-1,RK4283270001,Deka,,,Aufzug 2,"23414,1"
+12,RW3-350,Strom,RW3,057 Sibel Riegel 3 (25),1-057 NSHV AV R 3,TF4580330001,SER,,,,"235397,9"
+16,RW3-360,Strom,RW3,058 NSHV Riegel 3 (25),1-058 NSHV AV R 3,SH4382760008,SER,,,,"324440,1"
+17,RW3-370,Strom,RW3,058 NSHV Riegel 3 (25),1-058 NSHV AV R 3,DI7056760001,Real I.S.,,,RW3 Allg. Strom R3,"83208,9"
+18,RW3-390,Strom,RW3,58 NSHV Riegel 3 (25),1-058 NSHV AV R 3,XJ5085730005,Real I.S.,,,RW3 Allg. Strom,"163583,2"
+19,RW3-410,Strom,RW3,58 NSHV Riegel 3 (25),1-058 NSHV AV R 3,XJ5085730028,Real I.S.,,,RW3 Allg. Strom,"11699,1"
+20,RW3-380,Strom,RW3,58 NSHV Riegel 3 (25),1-058,XJ5085730030,Real I.S.,,,RW3 Allg. Strom,"346389,2"
+21,RW3-400,Strom,RW3,58 NSHV Riegel 3 (25),1-058 NSHV AV R 3,XJ5085730026,EcoViso,,,,"926435,4"
+22,RW3-420,Strom,RW3,062 Siebel Riegel 2 Außenbeleuchtung (25),-1-062,SH4382740001,Real I.S.,,,Außenbeleuchtung,"96193,1"
+23,RW3-430,Strom,RW3,NSHV Riegel 2 Bos (Portlandweg4),1-063 D24UG Riegel 2 ZHV,XJ5085730013,Fom ,,,,"268634,7"
+24,RW3-450,Strom,RW3,NSHV Riegel 2 Bos (Portlandweg4),1-063 D29UG Riegel 2 ZHV,XJ5085730006,2b advice,,,,"111247,3"
+25,RW3-470,Strom,RW3,NSHV Riegel 2 Bos (Portlandweg4),,ZC5307920002,Nokia-Siemens,,,,"90380,4"
+26,RW3-490,Strom,RW3,NSHV Riegel 2 Bos (Portlandweg4),,ZE5329730002,Ebner Stolz Mönning Bachem,,,,"152844,1"
+27,RW3-510,Strom,RW3,NSHV Riegel 2 Bos (Portlandweg4),-1-1063,YJ5231950004,Tech Advisory,,,,"185743,8"
+28,RW3-440,Strom,RW3,NSHV Riegel 2 Bos (Portlandweg4),1-063 UG Riegel 2 ZHV,XJ5085730014,Fom ,,,,"303360,9"
+29,RW3-460,Strom,RW3,NSHV Riegel 2 Bos (Portlandweg4),1-063 UG Riegel 2 ZHV,XJ5085730008,2b advice ,,,,"108670,7"
+30,RW3-480,Strom,RW3,NSHV Riegel 2 Bos (Portlandweg4),,ZC5307920003,Nokia-Siemens,,,,"84724,7"
+31,RW3-500,Strom,RW3,NSHV Riegel 2 Bos (Portlandweg4),,ZC5307920004,Ebner Stolz Mönning Bachem,,,,"154568,7"
+32,RW3-520,Strom,RW3,NSHV Riegel 2 Bos (Portlandweg4),-1-063 F28UG Riegel 2 ZHV,XJ5085730011,Fom ,,,,"102823,7"
+33,RW3-540,Strom,RW3,NSHV Riegel 2 Bos (Portlandweg4),-1-063 UG Riegel 2 ZHV,XJ5085730015,Fom ,,,,"142087,1"
+34,RW3-560,Strom,RW3,NSHV Riegel 2 Bos (Portlandweg4),,ZC5307920001,Cronn,,,,"72107,5"
+35,RW3-580,Strom,RW3,NSHV Riegel 2 Bos (Portlandweg4),1-063,XJ5085730032,Kunz,,,,"103455,4"
+36,RW3-600,Strom,RW3,NSHV Riegel 2 Bos (Portlandweg4),1-063,YJ5231950002,Euroscan,,,,"103494,7"
+37,RW3-530,Strom,RW3,NSHV Riegel 2 Bos (Portlandweg4),-1-063 UG Riegel 2 ZHV,XJ5085730012,Fom ,,,,103919
+38,RW3-550,Strom,RW3,NSHV Riegel 2 Bos (Portlandweg4),,ZG5351430008,SER,,,,"48057,5"
+39,RW3-570,Strom,RW3,NSHV Riegel 2 Bos (Portlandweg4),,ZE5329730003,m+p GmbH,,,,"102659,3"
+40,RW3-590,Strom,RW3,NSHV Riegel 2 Bos (Portlandweg4),1-063,XJ5085730033,Ebner Stolz Mönning Bachem,,,,"87298,5"
+41,RW3-610,Strom,RW3,NSHV Riegel 2 Bos (Portlandweg4),1-063,YJ5231950003,Tech Advisory,,,,"105716,4"
+42,RW3-620,Strom,RW3,NSHV Riegel 2 Bos (Portlandweg4),1-062,XJ5085730024,Real I.S.,,,Allg. Strom,"43991,9"
+43,RW3-640,Strom,RW3,NSHV Riegel 2 Bos (Portlandweg4),1-062,XJ5085730023,Real I.S.,,,,"175890,6"
+44,RW3-630,Strom,RW3,NSHV Riegel 2 Bos (Portlandweg4),1-063 Technikraum R2,XJ5085730020,Real I.S.,,,,"168165,4"
+45,RW3-650,Strom,RW3,NSHV Riegel 2 Bos (Portlandweg4),,CB5730350010,Real I.S.,,,Q1.1 und Q2.1,"54758,9"
+46,RW3-660,Strom,RW3,Riegel 1 NSHV 81 (29),1-081,ZG5351430005,Fom ,,,,"40348,4"
+47,RW3-10,Strom,RW3,Riegel 1 NSHV 81 (29),1-081,ZE5329730001,GMC²,,,,"49708,9"
+48,RW3-30,Strom,RW3,Riegel 1 NSHV 81 (29),1-081,YJ5231950001,BDU,,,,"132168,4"
+49,RW3-50,Strom,RW3,Riegel 1 NSHV 81 (29),1-081,ZG5351430003,Chefkoch,,,,"67544,5"
+50,RW3-70,Strom,RW3,Riegel 1 NSHV 81 (29),1-081,ZA5271440002,Chefkoch,,,,"92048,8"
+51,RW3-670,Strom,RW3,Riegel 1 NSHV 81 (29),1-081,ZG5351430006,Fom ,,,,"99496,7"
+52,RW3-20,Strom,RW3,Riegel 1 NSHV 81 (29),1-081,ZE5329730004,GMC²,,,,"94281,8"
+53,RW3-40,Strom,RW3,Riegel 1 NSHV 81 (29),1-081,YJ5231950005,BDU,,,,"69154,5"
+54,RW3-60,Strom,RW3,Riegel 1 NSHV 81 (29),1-081,ZG5351430004,Chefkoch,,,,"79023,3"
+55,RW3-80,Strom,RW3,Riegel 1 NSHV 81 (29),1-081,ZA5271440001,Chefkoch,,,,"121606,6"
+57,RW3-100,Strom,RW3,Riegel 1 NSHV 81 (29),1-081,ZA5271440008,Accenture,,,,"165641,1"
+58,RW3-120,Strom,RW3,Riegel 1 NSHV 81 (29),1-081 UG Riegel 1 ZHV,XJ5085730003,Sirtex,,,,"128050,2"
+59,RW3-140,Strom,RW3,Riegel 1 NSHV 81 (29),1-081,ZG5351430010,PatentSight,,,,"198294,2"
+60,RW3-160,Strom,RW3,Riegel 1 NSHV 81 (29),1-081,ZA5271440006,Chefkoch,,,,47869
+61,RW3-90,Strom,RW3,Riegel 1 NSHV 81 (29),1-081,XJ5085730017,Pathologie,,,,"166050,5"
+62,RW3-110,Strom,RW3,Riegel 1 NSHV 81 (29),1-081,ZA5271440007,Accenture,,,,"122967,9"
+63,RW3-130,Strom,RW3,Riegel 1 NSHV 81 (29),1-081 UG Riegel 1 ZHV,XJ5085730004,Sirtex,,,,"86563,4"
+65,RW3-170,Strom,RW3,Riegel 1 NSHV 81 (29),1-081,ZA5271440005,Chefkoch,,,,"131652,4"
+66,RW3-180,Strom,RW3,Riegel 1 NSHV 81 (29),1-081 UG Riegel 1 ZHV,XJ5085730010,Trimble,,,,"250557,7"
+67,RW3-200,Strom,RW3,Riegel 1 NSHV 81 (29),1-081,ZG5351430011,Cronn,,,,"96038,5"
+68,RW3-220,Strom,RW3,Riegel 1 NSHV 81 (29),1-081 UG Riegel 1 ZHV,DI7056740001,Sirtex,,,,"52799,1"
+69,RW3-240,Strom,RW3,Riegel 1 NSHV 81 (29),1-081,ZG5351430007,Chefkoch,,,,"97601,2"
+70,RW3-260,Strom,RW3,Riegel 1 NSHV 81 (29),1-081,ZA5271440003,Chefkoch,,,,"144889,9"
+71,RW3-190,Strom,RW3,Riegel 1 NSHV 81 (29),1-081,XJ5085730016,Pathologie,,,,"81696,7"
+72,RW3-210,Strom,RW3,Riegel 1 NSHV 81 (29),1-081,ZG5351430012,Neuhaus Consulting,,,,"123138,6"
+73,RW3-230,Strom,RW3,Riegel 1 NSHV 81 (29),1-081 UG Riegel 1 ZHV,XJ5085730002,Sirtex,,,,"68624,6"
+74,RW3-250,Strom,RW3,Riegel 1 NSHV 81 (29),1-081,ZG5351430002,German Board Advisors GmbH,,,,"99175,5"
+75,RW3-270,Strom,RW3,Riegel 1 NSHV 81 (29),1-081,ZA5271440004,Chefkoch,,,,"82467,9"
+76,RW3-280,Strom,RW3,Riegel 1 NSHV 81 (29),1-081,XJ5085730018,Real I.S.,,,Allg. Strom,"39545,5"
+77,RW3-300,Strom,RW3,Riegel 1 NSHV 81 (29),1-081,XJ5085730021,Real I.S.,,,Allg. Strom,"62347,3"
+78,RW3-320,Strom,RW3,Riegel 1 NSHV 81 (29),1-081,XJ5085730025,Real I.S.,,,,"18755,1"
+79,RW3-290,Strom,RW3,Riegel 1 NSHV 81 (29),1-081,XJ5085730019,Real I.S.,,,Allg. Strom,59830
+80,RW3-310,Strom,RW3,Riegel 1 NSHV 81 (29),1-081 Technikraum R1,XJ5085730022,Real I.S.,,,Allg. Strom,"136052,7"
+81,RW3-330,Strom,RW3,Riegel 1 BMZ 080 Sibel (29),1-080 BMZ R1,XI5085750002,Real I.S.,,,,"108153,9"
+82,RW3-340,Strom,RW3,Sauter,1-007 GHV,XJ5085730007,Real I.S.,,,Allg. Strom,"89095,6"
+83,RW3-690,Strom,RW3,NSHV A / Fom Treppe,1-007 GHV,XJ5085730031,Real I.S.,,,Keine Berechnung ?,"120052,2"
+84,RW3-680,Strom,RW3,NSHV A / Fom Treppe,1-007 GHV,XJ5085730009,EcoVisio ,,,,787411
+85,RW3-700,Strom,RW3,NSHV A / Fom Treppe,1-007 GHV,XJ5085730029,Real I.S.,,,Allg. Strom,"203297,8"
+86,RW3-780,Strom,RW3,NSHV A / Fom Treppe,1-007 GHV,XI5085790001,L'Osteria,,,,"825786,5"
+87,RW3-790,Strom,RW3,NSHV A / Fom Treppe,1-007 GHV,XI5085770003,L'Osteria,,,,"915043,8"
+88,RW3-K20,Kälte,RW3,,Büro Sauter,K64323022,Real I.S.,,,,"2626,3"
+89,RW3-K10,Kälte,RW3,,Büro Sauter,K64323033,Real I.S.,,,,"1148,17"
+89,RW3-K10,Wärme ,RW3,,Büro Sauter,W64323033,Real I.S.,,,,"739,31"
+90,RW3-W20,Wärme ,RW3,,Büro Sauter,W64323058,Real I.S.,,,,"3792,42"
+91,RW2-110,Strom,RW2,U,,AA5432950001,Beta-Klinik,,,,3887442
+92,RW2-K30,Kälte,RW2,S1 + S2 + H,HU 11 NL,K66150458,Deka,,,,"600,93"
+92,RW2-K30,Wärme,RW2,S1 + S2 + H,HU 11 NL,W66150458,Deka,,,,"680,9"
+93,RW2-K40,Kälte,RW2,S1 + S2 + H,HU 11 NL,K66150435,Deka,,,,"866,51"
+94,RW2-W50,Wärme,RW2,S1 + S2 + H,HU 11 NL,W66150470,Deka,,,,"1298,46"
+95,RW2-200,Strom,RW2,U,Neben Lorenz HU 16,AA5433070002,Netcologne,,,,"31653,3"
+96,RW2-230,Strom,RW2,U,Neben Lorenz HU 16,51124780,Beta-Klinik,,,,"72472,1"
+97,RW2-250,Strom,RW2,U,Neben Lorenz HU 16,48506113,Beta-Genese,,,,"127085,9"
+98,RW2-270,Strom,RW2,U,Neben Lorenz HU 16,48505664,Beta-Klinik,,,,"89513,9"
+99,RW2-240,Strom,RW2,U,Neben Lorenz HU 16,51575746,Beta-Klinik,,,,"261612,1"
+100,RW2-260,Strom,RW2,U,Neben Lorenz HU 16,52006221,Beta-Klinik,,,,"147479,8"
+101,RW2-280,Strom,RW2,U,Neben Lorenz HU 16,47856189,Beta-Klinik,,,,"89650,4"
+102,RW2-290,Strom,RW2,U,Neben Lorenz HU 16,51524633,Beta-Klinik,,,,"252577,8"
+103,RW2-300,Strom,RW2,U,Neben Lorenz HU 16,52050163,Beta-Genese,,,,"91603,2"
+104,RW2-310,Strom,RW2,U,Neben Lorenz HU 16,52030482,Beta-Genese,,,,"82409,6"
+105,RW2-220,Strom,RW2,U,Neben Lorenz HU 16,52014248,Beta-Klinik,,,,"1113,5"
+106,RW2-160,Strom,RW2,U,Neben Lorenz HU 16,AA5433070017,Dr. Seibt ,,,,"69025,3"
+107,RW2-120,Strom,RW2,U,,CI5823580001,Beta-Klinik (Physio),,,,"105347,5"
+108,RW2-130,Strom,RW2,U,,AA5433070001,Beta-Klinik,,,,"86855,2"
+109,RW2-170,Strom,RW2,U,Neben Lorenz HU 16,AA5433070005,Beta-Klinik,,,,"85765,1"
+110,RW2-180,Strom,RW2,U,Neben Lorenz HU 18,AA5432970001,wandlerzählerBeta-Klinik / Beta-Genese,,,,"315967,8"
+111,RW2-210,Strom,RW2,U,Neben Lorenz HU 18,AA5433010001,EcoVisio ,,,Tiefgarage,"615978,7"
+112,RW2-190,Strom,RW2,U,Neben Lorenz HU 18,AA5432990003,Deka,,,Allgemeinstrom,"687256,5"
+113,RW2-W20,Wärme,RW2,U,HU 26,W66150469,Deka,,,,"1417,24"
+114,RW2-K10,Kälte,RW2,U,HU 26,K66150457,Deka,,,,"457,01"
+114,RW2-K10,Wärme,RW2,U ,HU 26,W66150457,Deka,,,,"571,34"
+115,RW2-K20,Kälte,RW2,U,HU 26,K66150434,Deka,,,,"844,14"
+116,RW2-140,Strom,RW2,U,2. OG Beta,ZL5420640001,Beta-Klinik (Herzkatheter),,,,"52544,4"
+117,RW2-150,Strom,RW2,U,2. OG Beta Labor Dr. Seibt,ZL5420640002,Dr. Seibt (Labor),,,,"58676,4"
+118,RW2-490,Strom,RW2,S2,Bonner Bogen 2,AA5432990001,Deka,,,Allg. Strom,"183644,6"
+119,RW2-430,Strom,RW2,S2,Bonner Bogen 2,AA5433070010,Kameha Grand,,,,"142622,1"
+120,RW2-450,Strom,RW2,S2,Bonner Bogen 2,AA5433070003,MBV Müller,,,,"28125,2"
+121,RW2-460,Strom,RW2,S2,Bonner Bogen 2,AA5433070009,TüV InterCert,,,,"28218,9"
+122,RW2-440,Strom,RW2,S2,Bonner Bogen 2,AA5433070004,TüV InterCert,,,,"91050,6"
+123,RW2-470,Strom,RW2,S2,Bonner Bogen 2,AA5433070019,bhcosmetics,,,,"29927,1"
+"124,1",RW2-480,Strom,RW2,S2,Bonner Bogen 2,AA5433070020,Cardionovum,,,,"109398,1"
+"124,2",RW2-410,Strom,RW2,S1,Portlandweg 1,AA5432990002,Deka,,,Allg. Strom,"548910,4"
+125,RW2-360,Strom,RW2,S1,Portlandweg 1,AA5433070016,Beta Klinik,,,,"147370,7"
+126,RW2-370,Strom,RW2,S1,Portlandweg 1,AA5433070007,Beta Klinik,,,,"53417,6"
+127,RW2-380,Strom,RW2,S1,Portlandweg 1,AA5433070018,Beta Klinik,,,,"13662,2"
+129,RW2-390,Strom,RW2,S1,Portlandweg 1,AA5433070006,Beta Klinik,,,,"122954,8"
+130,RW2-400,Strom,RW2,S1,Portlandweg 1,AA5433070008,Beta Klinik,,,,"60194,4"
+131,EZW-10,Wasser,EZ,Löschwasserbecken ,Sprinklerzentrale,HY 382 340 06,EcoVisio ,,,Sprinkler,"325,174"
+132,EZW-20,Wasser,EZ,Sprinklerbehälter ,Sprinklerzentrale,HY 387 926 61,EcoVisio ,,,Sprinkler,"178,4157"
+135,EZS-30,Strom,EZ,Teifgarage 1,NSHV,DI7056820001,EcoVisio ,,,Tiefgarage,"150507,2"
+136,EZS-40,Strom,EZ,Tiefgarage 2,NSHV,DI7056840001,EcoVisio ,,,Tiefgarage,139193
+143,EZS-50,Strom,EZ,NSHV-SV,SV,BJ5689380012,EcoVisio ,,,Notstrom,"115666,4"
+144,EZS-60,Strom,EZ,BF-C / S2 / Aufzug P5,SV Energiezentrale Feld 3,WI4971650001,Deka,,,,10651
+145,EZS-70,Strom,EZ,BF-C / S1 / Aufzug P2,SV Energiezentrale Feld 3,WI4971650002,Deka,,,,13199
+146,EZS-80,Strom,EZ,BF-C / H / aufzug P1,SV Energiezentrale Feld 3,WI4971650009,Deka,,,,31335
+147,EZS-90,Strom,EZ,Rechenzentrum USV-Anlage (Stromschiene1),SV Energiezentrale Feld 3,WI4971650006,EcoVisio ,,,Rechenzentrum,2285876
+148,EZS-100,Strom,EZ,Rechenzentrum Klima 2 (Not-Klimasplittgeräte 2 Stck),SV Energiezentrale Feld 4,WI4971650005,EcoVisio ,,,Rechenzentrum,351653
+149,EZS-110,Strom,EZ,Rechenzentrum Klima 1 (Kaltwasser-Klimatruhen 4 Stck),SV Energiezentrale Feld 4,WI4971650008,EcoVisio ,,,Rechenzentrum,1085458
+150,EZS-120,Strom,EZ,"BF-C / U / Aufzug P3 + P3.1 + Sicherheitsbeleuchtung BT U, H, S1, S + Tiefgarage",SV Energiezentrale Feld 4,WI4971650003,Deka,,,,660604
+151,EZS-130,Strom,EZ,SV Rheinwerk 3,SV Energiezentrale Feld 4,WI4971650010,Real I.S.,,,Summenzähler,2045882
+152,EZS-140,Strom,EZ,Energiezentrale Sprinklerzentrale,SV Energiezentrale Feld 4,WI4971650007,EcoVisio ,,,Sprinkler,6789
+153,EZS-150,Strom,EZ,Druckerhöhung Frischwasser (Raum 1.61.010),SV Energiezentrale Feld 5,WI4971650004,EcoVisio ,,,,119
+154,EZS-160,Strom,EZ,Sommerbrunnen 8,SV Energiezentrale Feld 5,BJ5689380011,EcoVisio ,Wärme,,,"221746,2"
+155,EZS-170,Strom,EZ,MSR-Schaltschrank Energiezentrale,SV Energiezentrale Feld 5,BJ5689380002,EcoVisio ,,,,"15142,9"
+156,EZS-180,Strom,EZ,Winterbrunnen 3,SV Energiezentrale Feld 5,BJ5689380004,EcoVisio ,Kälte,,,"118706,2"
+157,EZS-190,Strom,EZ,Praxis Prof. Reul,NSHV Energiezentrale Feld 1,SH4382760007,EcoVisio ,,,Summenzähler,2451285
+158,EZS-200,Strom,EZ,Gebäude H,NSHV Energiezentrale Feld 1,CI5823600001,EcoVisio ,,,Summenzähler,"237377,1"
+159,EZS-210,Strom,EZ,Gebäude S.1,NSHV Energiezentrale Feld 1,SH4382840001,EcoVisio ,,,Summenzähler,"979194,2"
+160,EZS-220,Strom,EZ,"vroher Reserve, seit 12.05.2014 Beta-Klinik MRT 2",NSHV Energiezentrale Feld 2,BJ5689440001,EcoVisio ,,,Summenzähler,"654904,7"
+161,EZS-230,Strom,EZ,Gebäude S.2,NSHV Energiezentrale Feld 2,SH4382760009,EcoVisio ,,,Summenzähler,"363579,3"
+162,EZS-240,Strom,EZ,Gebäude U,NSHV Energiezentrale Feld 2,SH4386320001,EcoVisio ,,,Summenzähler,"950483,1"
+163,EZS-250,Strom,EZ,2. OG U-Gebäude Beta. Vorher Reserve,NSHV Energiezentrale Feld 2,SH4382760003,EcoVisio ,,,Summenzähler,"686036,4"
+164,EZS-260,Strom,EZ,NSHV SV - Gesamt ,NSHV Energiezentrale Feld 3,SH4382740003,EcoVisio ,,,Summenzähler,4330334
+165,EZS-270,Strom,EZ,Hotel 1,NSHV,BJ5689400001,Kameha Grand,,,,7694328
+166,EZS-280,Strom,EZ,Hotel 2,NSHV,BJ5689400002,Kameha Grand,,,,539670
+167,EZS-290,Strom,EZ,Sommerbrunnen 7,Abgänge NSHV Energiezentrale,BJ5689380006,EcoVisio ,Wärme,,,"258530,7"
+168,EZS-300,Strom,EZ,Sommerbrunnen 6,Abgänge NSHV Energiezentrale,BJ5689380007,EcoVisio ,Wärme,,,"204894,5"
+169,EZS-310,Strom,EZ,Winterbrunnen 2 ,Abgänge NSHV Energiezentrale,BJ5689380008,EcoVisio ,Kälte,,,"195698,7"
+170,EZS-320,Strom,EZ,Winterbrunnen 1 ab 26.05.2014 (vormals ab 19.03.2012 Baustromversorgung BF AB,Abgänge NSHV Energiezentrale,BJ5689380010,EcoVisio ,Kälte,,,"96449,3"
+171,EZS-330,Strom,EZ,Hydrant Druckerhöhung (prov.) -->CEE Steckdose Permatec--> Seit Juli 2011: Oxireductionsanlage (Rechenzentrum),Abgänge NSHV Energiezentrale,BJ5689380005,EcoVisio ,,,Rechenzentrum,"369387,9"
+172,EZS-340,Strom,EZ,Booster,Abgänge NSHV Energiezentrale,SH4382740005,Kameha Grand,,,Strom für Warmwasser,"279245,3"
+173,EZS-350,Strom,EZ,UV NSHV AV,Abgänge NSHV Energiezentrale,BJ5689380001,EcoVisio ,Energie ,,,"563846,6"
+174,EZS-360,Strom,EZ,"Rechenzentrum-AV / Stromschiene 2, vorher: Reserve",Abgänge NSHV Energiezentrale,BJ5689380009,EcoVisio ,,,Rechenzentrum,758608
+177,EZS-370,Strom,EZ,Energiezentrale,NSHV Energiezentrale Feld 6,BJ5689440002,EcoVisio ,Energie ,,,"148438,7"
+178,EZS-380,Strom,EZ,Stromversorgung hydraulische Trennung Rheinwerk 2 und 3. vroher: Reserve,NSHV Energiezentrale Feld 6,BJ5689380003,RW2 u. RW3,,,Hydraulisch Trennung 1/2,"96826,9"
+179,EZS-390,Strom,EZ,MSR-Schaltschrank,NSHV Energiezentrale Feld 7,BJ5689420001,EcoVisio ,Energie ,,,2520652
+181,EZS-400,Strom,EZ,Mobilfunkanlage O2,Durchgang Schwachstromräume,62536170,Kein Kunde,,,,19764
+182,EZS-410,Strom,EZ,Mobilfunkanlage T-Mobile,Durchgang Schwachstromräume,31475828,Elysion,,,,"70695,2"
+183,EZW-30,Wasser,EZ,WW-Bereitung Küche ,Neben Anschluss Gas Wasser,HY3965888,Kameha Grand,,,Falsche Zählernummer?,"26966,9079"
+184,EZS-420,Kälte,EZ,Kälte Elektroräume,Anschluss Gas Wasser,K0833345,Elysion,,,,"553,69"
+185,EZW-40,Wasser,EZ,Verbundwasserzähler klein,ZW2,SEN0019159587,Kameha Grand,,,Wasser,"10274,8"
+186,EZW-50,Wasser,EZ,Verbundwasserzähler groß,ZW1,SN0119749949,Kameha Grand,,,Wasser,"7704,7"
+188,EZG-10,Erdgas ,EZ,Abrechnungszähler int.,Anschluss Gas Wasser,30296325,Kameha Grand,,,Kamin,"50770,92"
+189,EZG-20,Erdgas ,EZ,Hauptgaszähler SWB,Anschluss Gas Wasser,83013363,EcoVisio ,Wärme,,,"1517734,7"
+190,EZS-430,,EZ,Wärmepumpe 1 / Kondensation,EZ,08 27 337,EcoVisio ,Energie ,,Kessel,24650
+191,EZW-60,Wasser,EZ,Reflex Kälte,EZ,-,EcoVisio ,Energie ,,EcoVisio,"41,7201"
+192,EZW-70,Wasser,EZ,EZ,EZ,38 785 709,EcoVisio ,Energie ,,EcoVisio,"382,6525"
+193,EZS-440,Kälte,EZ,ULK - Fernl. Bauf / C / AB / L - Kälte,EZ,K0833358,Kameha Grand,,,,"9331,7"
+194,EZS-450,,EZ,ULK - RLT,EZ,K0906869,Kameha Grand,,,,"3419,6"
+195,EZS-460,,EZ,ULK - H-Zimmer,EZ,K0906852,Kameha Grand,,,,"7492,8"
+196,EZS-470,,EZ,ULK-Notkühlung vor WT,EZ,08 33 346,EcoVisio ,,,Kessel,"10842,23"
+197,EZS-480,Kälte ,EZ,Rohmühle,EZ,K0917543,Rohmühle,,,,"1409,93"
+198,EZS-490,,EZ,RLT - Geräte Kälte,EZ,K0906891,Kameha Grand,,,,"1236,2"
+199,EZW-80,Wasser,EZ,Reflex Kühlung,EZ,-,EcoVisio ,Energie ,,EcoVisio,"17,267"
+200,EZW-90,Wasser,EZ,Außenbewässerung,EZ,13150455,Kameha Grand,,,Hotel,"8751,7743"
+201,EZS-500,,EZ,Kälte - Klimaboden ,EZ,K0906855,Kameha Grand,,,,"955,6"
+202,EZS-510,Wärme,EZ,BKT - Fernl. Bauf / C / AB / L - BKT Wärme,EZ,W35991046,RW2 u. RW3,,,,"4848,2"
+202,EZS-520,Kälte,EZ,BKT - Fernl. Bauf / C / AB / L - BKT Kälte,EZ,K35991046,RW2 u. RW3,,,,6803
+203,EZS-530,Wärme,EZ,BKT - Wärme,EZ,W38018945,Kameha Grand,,,,"670,32"
+203,EZS-540,Kälte,EZ,BKT - Kälte,EZ,K38018945,Kameha Grand,,,,"4194,99"
+204,EZW-100,Wasser,EZ,Reflex BKT,EZ,-,EcoVisio ,,,EcoVisio,"5,5549"
+205,EZW-110,Wasser,EZ,Wassermenge zum Rhein ,EZ,0919382,EcoVisio ,,,EcoVisio,0
+206,EZS-550,,EZ,Konvektoren Hotelzimmer,EZ,W0906862,Kameha Grand,,,,"9610,3"
+207,EZS-560,,EZ,stat. Heizflächen ,EZ,W0906860,Kameha Grand,,,,"792,83"
+208,EZS-570,Wärme,EZ,Heiz. - Fernl. Bauf / C / AB / L - Wärme,EZ,W0833361,EcoVisio ,Energie ,,,"16609,1"
+209,EZS-580,,EZ,Vert. Gleitend Richt. Wärmepumpe,EZ,08 27 322,EcoVisio ,Energie ,,Kessel,"10817,3"
+210,EZS-590,,EZ,WWB-Hotel WW-Speicher -Vorerhitzer HK,EZ,W1026188,Kameha Grand,,,,"319,532"
+211,EZS-600,Strom,EZ,WWB-Hotel WW-Speicher - Vorerhitzer WP,EZ,W1026222,Kameha Grand,,,,"722,403"
+212,EZS-610,,EZ,Vert. Gleitend Richt. Weiche,EZ,08 27 323,EcoVisio ,Energie ,,Kessel,"26941,8"
+213,EZS-620,,EZ,Vert. 50°C Richt. Weiche,EZ,08 27 320,EcoVisio ,Energie ,,Kessel,"7441,6"
+214,EZS-630,,EZ,FB-Heizung Schwimmbad WT1,EZ,W0906858,Kameha Grand,,,,"1317,24"
+215,EZS-640,,EZ,FB-Heizung primäre EG ,EZ,W0906859,Kameha Grand,,,,"175,46"
+216,EZS-650,,EZ,Heizung Gartnerfassade ,EZ,W0906861,Kameha Grand,,,,"2248,7"
+217,EZS-660,,EZ,Heizung Klimaboden,EZ,W0906853,Kameha Grand,,,,"903,1"
+218,EZS-670,,EZ,Not-Heiz. Zum WT-BKT,EZ,08 27 338,EcoVisio ,Wärme,,Kessel,"5435,8"
+219,EZS-680,,EZ,Vert. 50°C Richt. Wärmepumpe,EZ,08 27 331,EcoVisio ,Wärme,,Kessel,"9365,2"
+220,EZW-120,Wasser,EZ,Reflex Heizung (neben WW-Zimmer-Zähler),EZ,-,EcoVisio ,,,EcoVisio,"261,8714"
+221,EZW-130,Wasser,EZ,WW-Bereitung Zimmer ,EZ,ISTA: 16743,Kameha Grand,,,Hotel,"33879,38"
+222,EZS-690,,EZ,Vert. 70°C Richt. Wärmepumpe,EZ,08 27 330,EcoVisio ,Wärme,,Kessel,"10712,5"
+223,EZS-700,,EZ,RLT-Geräte Heizung ,EZ,W0906868,Kameha Grand,,,,17957
+224,EZS-710,,EZ,WWB-Hotel (WT-310 kW),EZ,W0906877,Kameha Grand,,,,"8823,5"
+225,EZS-720,,EZ,WWB-Fitness Schwimmbad ,EZ,W0906857,Kameha Grand,,,,"664,28"
+226,EZS-730,,EZ,Vert. 70°C Richt. Weiche,EZ,08 27 321,EcoVisio ,Wärme,,Kessel,"664,28"
+227,EZS-740,,EZ,BW-Kessel 1 - Abgas-WT,EZ,08 32 279,EcoVisio ,Wärme,,Kessel,"664,28"
+228,EZS-750,,EZ,BW-Kessel 1 - S825 - 1.000 kW,EZ,08 32 278,EcoVisio ,Wärme,,Kessel,"664,28"
+229,EZS-760,,EZ,BW-Kessel 2 - S825 - 1900 kW,EZ,08 27 336,EcoVisio ,Wärme,,Kessel,"664,28"
+230,EZS-770,,EZ,BW.Kessel 2 - Abgas-WT,EZ,08 32 276 ,EcoVisio ,Wärme,,Kessel,"664,28"
+231,EZS-780,,EZ,WWB-Hotel (WT-240kW),EZ,W1404086,Kameha Grand,,,,"664,28"
+232,EZS-790,,LZ,RLT-9 Lüftungsnlage ,Lüftungszentrale P601,1201824,EcoVisio ,,,Lüftung,"344,93"
+,RW2-100,Strom,RW2,H,,CI5823560001,Vorzähler Bauteil H,,,,ohne zählerstände
+,RW2-320,Strom,RW2,EZ,,SH4382760007,Vorzähler Beta Klinik,,,,ohne zählerstände
+,RW2-330,Strom,RW2,EZ,,SH4386320001,Vorzähler Bauteil U,,,,ohne zählerstände
+,RW2-340,Strom,RW2,EZ,,SH4382760003,2 OG U Gebäude Beta,,,,ohne zählerstände
+,RW2-350,Strom,RW2,EZ,,BJ5689440001,Beta-Klinik (MRT),,,,ohne zählerstände
+,RW2-420,Strom,RW2,EZ,,SH4382840001,Vorzähler S1,,,,ohne zählerstände
+,RW2-500,Strom,RW2,EZ,,SH4382760009,Vorzähler S2,,,,ohne zählerstände
+,RW3-150,Strom,RW3,Riegel 1 NSHV 81 (29),1-081,ZG5351430001,m2soft,,,,fremdzähler
+,RW3-710,Strom,RW3,NSHV A / Fom Treppe,1-007 GHV,F.1.1 Reserve,keine Berechnung,,,,ohne zählerstände
+,RW3-720,Strom,RW3,NSHV A / Fom Treppe,1-007 GHV,F.2.1 Reserve,keine Berechnung,,,,ohne zählerstände
+,RW3-730,Strom,RW3,NSHV A / Fom Treppe,1-007 GHV,F.3.1 Reserve,keine Berechnung,,,BKT - Wärme,ohne zählerstände
+,RW3-740,Strom,RW3,NSHV A / Fom Treppe,1-007 GHV,F.5.1 UV Technik,keine Berechnung,,,BKT - Kälte,ohne zählerstände
+,RW3-750,Strom,RW3,NSHV A / Fom Treppe,1-007 GHV,F.7.1 UV Technik ,keine Berechnung,,,Wärme,ohne zählerstände
+,RW3-760,Strom,RW3,NSHV A / Fom Treppe,1-007 GHV,F.1.1 Riegel 1,keine Berechnung,,,Kälte,ohne zählerstände
+,RW3-770,Strom,RW3,NSHV A / Fom Treppe,1-007 GHV,F.2.1 Riegel 1,keine Berechnung,,,BKT - Wärme,ohne zählerstände
+,RW3-800,Strom,RW3,NSHV A / Fom Treppe,,(Power Logic) PM 210/1,keine Berechnung,,,BKT - Kälte,ohne zählerstände
+,RW3-810,Strom,RW3,NSHV A / Fom Treppe,,Power Logic PM 210/2,keine Berechnung,,,Wärme,ohne zählerstände
+,RW3-820,Strom,RW3,NSHV A / Fom Treppe,1-007 GHV,Einsp. Trafo 1 Feld 1,keine Berechnung,,,Kälte,ohne zählerstände
+,RW3-830,Strom,RW3,NSHV A / Fom Treppe,1-007 GHV,Einsp. Trafo 2 Feld 6,keine Berechnung,,,,ohne zählerstände
+,RW3-840,Strom,RW3,NSHV A / Fom Treppe,Rechenzentrum USV SER,T05920,SER,,,BKT,ohne zählerstände
+,RW3-850,Strom,RW3,NSHV A / Fom Treppe,Rechenzentrum USV SER,T05926,SER,,,BKT,ohne zählerstände
+,,Strom,EZ,Mobilfunkanlage Eplus,Durchgang Schwachstromräume,32982300,nicht vorhanden,,,,
+,,Strom,,,UG Rohmühle,EMH00 04626296/EMH8955515004377,,,,,
