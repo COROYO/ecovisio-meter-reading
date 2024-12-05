@@ -5,7 +5,6 @@ import { Spinner, Table } from "flowbite-react";
 
 export function MeterReadings() {
   const { data, isLoading } = api.meter.getAll.useQuery();
-  console.log("data", data);
 
   return (
     <div className="w-full">
@@ -21,6 +20,10 @@ export function MeterReadings() {
               <Table.HeadCell>Gebäude</Table.HeadCell>
               <Table.HeadCell>Bauteil</Table.HeadCell>
               <Table.HeadCell>Raum</Table.HeadCell>
+              <Table.HeadCell>Zählernummer</Table.HeadCell>
+              <Table.HeadCell>Kunde</Table.HeadCell>
+              <Table.HeadCell>Bemerkung</Table.HeadCell>
+              <Table.HeadCell>Zählerstand 30.09.2024</Table.HeadCell>
             </Table.Head>
             <Table.Body className="divide-y">
               {data?.map((meter) => (
@@ -31,6 +34,10 @@ export function MeterReadings() {
                   <Table.Cell>{meter.building?.name}</Table.Cell>
                   <Table.Cell>{meter.component?.name}</Table.Cell>
                   <Table.Cell>{meter.room}</Table.Cell>
+                  <Table.Cell>{meter.identifier}</Table.Cell>
+                  <Table.Cell>{meter.customer?.name}</Table.Cell>
+                  <Table.Cell>{meter.meterReadings[0]?.remarks}</Table.Cell>
+                  <Table.Cell>{meter.meterReadings[0]?.value}</Table.Cell>
                 </Table.Row>
               ))}
             </Table.Body>

@@ -31,7 +31,13 @@ export const meterRouter = createTRPCRouter({
 
   getAll: publicProcedure.query(async ({ ctx }) => {
     const meterReading = await ctx.db.meter.findMany({
-      include: { meterReadings: true, building: true, component: true },
+      include: {
+        meterReadings: true,
+        building: true,
+        component: true,
+        customer: true,
+        parentMeter: true,
+      },
       orderBy: { id: "asc" },
     });
 
