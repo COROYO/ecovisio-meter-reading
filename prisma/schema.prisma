@@ -20,6 +20,8 @@ model Meter {
   componentId       Int?
   customer          Customer?     @relation(fields: [customerId], references: [id])
   customerId        Int?
+  meterPoint        String?
+  room              String?
   
   // Self-referencing relation
   parentMeter       Meter?        @relation("ParentChildMeter", fields: [parentMeterId], references: [id])

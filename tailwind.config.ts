@@ -1,8 +1,9 @@
 import { type Config } from "tailwindcss";
 import { fontFamily } from "tailwindcss/defaultTheme";
+import { content, plugin } from "flowbite-react/tailwind";
 
 export default {
-  content: ["./src/**/*.tsx"],
+  content: [content(), "./src/**/*.tsx"],
   theme: {
     extend: {
       fontFamily: {
@@ -10,5 +11,6 @@ export default {
       },
     },
   },
-  plugins: [],
+  // eslint-disable-next-line @typescript-eslint/no-require-imports
+  plugins: [plugin()],
 } satisfies Config;

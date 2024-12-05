@@ -22,10 +22,19 @@ export const meterRouter = createTRPCRouter({
     }), */
 
   getLatest: publicProcedure.query(async ({ ctx }) => {
-    const post = await ctx.db.meterReading.findFirst({
+    const meterReading = await ctx.db.meterReading.findFirst({
       orderBy: { readingDate: "desc" },
     });
 
-    return post ?? null;
+    return meterReading ?? null;
+  }),
+
+  getAll: publicProcedure.query(async ({ ctx }) => {
+    const meterReading = await ctx.db.meter.findMany({
+      include: { meterReadings: true, building: true, component: true },
+      orderBy: { id: "asc" },
+    });
+
+    return meterReading ?? null;
   }),
 });

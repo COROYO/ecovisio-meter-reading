@@ -1,0 +1,2 @@
+-- AlterTable
+ALTER TABLE `Meter` ADD COLUMN `room` VARCHAR(191) NULL;

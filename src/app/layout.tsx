@@ -4,6 +4,16 @@ import { GeistSans } from "geist/font/sans";
 import { type Metadata } from "next";
 
 import { TRPCReactProvider } from "~/trpc/react";
+import {
+  Button,
+  Navbar,
+  NavbarBrand,
+  NavbarCollapse,
+  NavbarLink,
+  NavbarToggle,
+} from "flowbite-react";
+
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Create T3 App",
@@ -17,7 +27,16 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${GeistSans.variable}`}>
       <body>
-        <TRPCReactProvider>{children}</TRPCReactProvider>
+        <TRPCReactProvider>
+          <Navbar fluid rounded>
+            <NavbarBrand href="https://flowbite-react.com">
+              <span className="self-center whitespace-nowrap text-xl font-semibold dark:text-white">
+                ecovisio meter reading
+              </span>
+            </NavbarBrand>
+          </Navbar>
+          {children}
+        </TRPCReactProvider>
       </body>
     </html>
   );

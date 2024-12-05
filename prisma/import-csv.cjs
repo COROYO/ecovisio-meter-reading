@@ -22,14 +22,13 @@ async function main() {
         description: row["Beschreibung"] ? row["Beschreibung"].trim() : null,
         building: row["Gebäude"] ? row["Gebäude"].trim() : null,
         component: row["Bauteil"] ? row["Bauteil"].trim() : null,
+        meterPoint: row["Zählerpunkt"] ? row["Zählerpunkt"].trim() : null,
         room: row["Raum"] ? row["Raum"].trim() : null,
         customer: row["Kunde"] ? row["Kunde"].trim() : null,
         parentMeter: row["Übergeordneter Zählerpunkt"]
           ? row["Übergeordneter Zählerpunkt"].trim()
           : null,
-        customerPoint: row["Kundenzählpunkt"]
-          ? row["Kundenzählpunkt"].trim()
-          : null,
+        customerPoint: row["Zählerpunkt"] ? row["Zählerpunkt"].trim() : null,
         remarks: row["Bemerkung"] ? row["Bemerkung"].trim() : null,
         reading: row["Zählerstand 30.09.2024"]
           ? parseFloat(row["Zählerstand 30.09.2024"].replace(",", "."))
@@ -70,6 +69,8 @@ async function main() {
             data: {
               identifier: record.identifier,
               description: record.description,
+              meterPoint: record.meterPoint,
+              room: record.room,
               customerId: customer.id,
               buildingId: building.id,
               componentId: component.id,
