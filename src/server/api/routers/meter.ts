@@ -27,6 +27,7 @@ export const meterRouter = createTRPCRouter({
     .input(
       z.optional(
         z.object({
+          buildingId: z.optional(z.number()),
           meterReadingsFrom: z.optional(z.date()),
           meterReadingsTo: z.optional(z.date()),
         }),
@@ -58,6 +59,9 @@ export const meterRouter = createTRPCRouter({
           component: true,
           customer: true,
           parentMeter: true,
+        },
+        where: {
+          ...(input?.buildingId ? { buildingId: input.buildingId } : {}),
         },
         orderBy: { id: "asc" },
       });

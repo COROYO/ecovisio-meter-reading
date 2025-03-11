@@ -29,7 +29,7 @@ export default function RootLayout({
       <body>
         <TRPCReactProvider>
           <Navbar fluid rounded>
-            <NavbarBrand href="https://flowbite-react.com">
+            <NavbarBrand href="/">
               <span className="self-center whitespace-nowrap text-xl font-semibold dark:text-white">
                 ecovisio meter reading
               </span>

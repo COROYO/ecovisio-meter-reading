@@ -1,6 +1,5 @@
 "use client";
 
-import { api } from "~/trpc/react";
 import {
   Button,
   Datepicker,
@@ -11,8 +10,13 @@ import {
   TextInput,
 } from "flowbite-react";
 import { useState } from "react";
+import { api } from "~/trpc/react";
 
-export function MeterReadings() {
+type MeterReadingsProps = {
+  buildingId: string;
+};
+
+export function MeterReadings({ buildingId }: MeterReadingsProps) {
   const [openModal, setOpenModal] = useState(false);
   const [newMeterReadingDate, setNewMeterReadingDate] = useState(new Date());
   const [meterValue, setMeterValue] = useState(1);
@@ -23,6 +27,7 @@ export function MeterReadings() {
     useState<null | Date>(new Date());
 
   const { data, isLoading, refetch } = api.meter.getAll.useQuery({
+    buildingId: buildingId ? Number(buildingId) : undefined,
     meterReadingsFrom: meterReadingsFilterFrom ?? undefined,
     meterReadingsTo: meterReadingsFilterTo ?? undefined,
   });
