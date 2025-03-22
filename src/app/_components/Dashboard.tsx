@@ -1,27 +1,33 @@
 "use client";
 
-import { Card, ListGroup, Spinner } from "flowbite-react";
+import { Card, Spinner, Table } from "flowbite-react";
 import { api } from "../../trpc/react";
+import { BuildingRow } from "./BuildingRow";
 
 export function Dashboard() {
   const { data: buildingsData, isLoading } = api.building.getAll.useQuery();
   return (
     <div>
       <Card>
-        Buildings
+        Gebäude
         {isLoading ? (
           <Spinner />
         ) : (
-          <ListGroup className="min-w-48">
-            {buildingsData?.map((building) => (
-              <ListGroup.Item
-                key={building.id}
-                href={`/meter-readings?buildingId=${building.id}`}
-              >
-                {building.name}
-              </ListGroup.Item>
-            ))}
-          </ListGroup>
+          <Table>
+            <Table.Head>
+              <Table.HeadCell>Gebäude</Table.HeadCell>
+              <Table.HeadCell>Verbrauch</Table.HeadCell>
+            </Table.Head>
+            <Table.Body className="divide-y">
+              {buildingsData?.map((building) => (
+                <BuildingRow
+                  key={building.id}
+                  buildingId={building.id}
+                  buildingName={building.name}
+                />
+              ))}
+            </Table.Body>
+          </Table>
         )}
       </Card>
     </div>
