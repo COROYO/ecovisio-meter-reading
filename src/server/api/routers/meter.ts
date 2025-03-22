@@ -128,4 +128,46 @@ export const meterRouter = createTRPCRouter({
       }, 0);
       return buildingConsumption;
     }),
+
+  getLatestCustomerConsumption: publicProcedure
+    .input(z.object({ customerId: z.number() }))
+    .query(async ({ ctx, input }) => {
+      const customerMeters = await ctx.db.meter.findMany({
+        include: {
+          meterReadings: {
+            orderBy: { readingDate: "desc" },
+            take: 2,
+          },
+        },
+        where: {
+          customerId: input.customerId,
+        },
+      });
+
+      if (customerMeters.length === 0) return 0;
+
+      const buildingMetersWithoutCurrentMonthReading = customerMeters.filter(
+        (meter) => {
+          const filteredReadings = meter.meterReadings.filter((reading) => {
+            return (
+              reading.readingDate.getMonth() !== new Date().getMonth() ||
+              reading.readingDate.getFullYear() !== new Date().getFullYear()
+            );
+          });
+          return filteredReadings.length > 0;
+        },
+      );
+
+      if (buildingMetersWithoutCurrentMonthReading.length > 0) return 0;
+
+      const buildingConsumption = customerMeters.reduce((acc, meter) => {
+        const latestReading = meter.meterReadings[0];
+        const previousReading = meter.meterReadings[1];
+        if (previousReading?.value && latestReading?.value) {
+          acc += latestReading.value - previousReading.value;
+        }
+        return acc;
+      }, 0);
+      return buildingConsumption;
+    }),
 });
