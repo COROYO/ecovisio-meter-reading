@@ -28,12 +28,14 @@ export const meterRouter = createTRPCRouter({
       z.optional(
         z.object({
           buildingId: z.optional(z.number()),
+          customerId: z.optional(z.number()),
           meterReadingsFrom: z.optional(z.date()),
           meterReadingsTo: z.optional(z.date()),
         }),
       ),
     )
     .query(async ({ ctx, input }) => {
+      console.log("input?.customerId", input?.customerId);
       const meterReading = await ctx.db.meter.findMany({
         include: {
           meterReadings: {
@@ -62,6 +64,7 @@ export const meterRouter = createTRPCRouter({
         },
         where: {
           ...(input?.buildingId ? { buildingId: input.buildingId } : {}),
+          ...(input?.customerId ? { customerId: input.customerId } : {}),
         },
         orderBy: { id: "asc" },
       });

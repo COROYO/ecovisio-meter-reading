@@ -17,7 +17,7 @@ export function CustomerRow({ customerId, customerName }: BuildingRowProps) {
   return (
     <Table.Row
       key={customerId}
-      className={`hover:bg-gray-100 ${data === 0 ? "bg-red-100" : ""}`}
+      className={`cursor-pointer hover:bg-gray-100 ${data === 0 ? "bg-red-100" : ""}`}
       onClick={() => router.push(`/meter-readings?customerId=${customerId}`)}
     >
       <Table.Cell>{customerName}</Table.Cell>

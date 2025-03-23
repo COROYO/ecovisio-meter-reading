@@ -14,9 +14,10 @@ import { api } from "~/trpc/react";
 
 type MeterReadingsProps = {
   buildingId: string;
+  customerId: string;
 };
 
-export function MeterReadings({ buildingId }: MeterReadingsProps) {
+export function MeterReadings({ buildingId, customerId }: MeterReadingsProps) {
   const [openModal, setOpenModal] = useState(false);
   const [newMeterReadingDate, setNewMeterReadingDate] = useState(new Date());
   const [meterValue, setMeterValue] = useState(1);
@@ -28,6 +29,7 @@ export function MeterReadings({ buildingId }: MeterReadingsProps) {
 
   const { data, isLoading, refetch } = api.meter.getAll.useQuery({
     buildingId: buildingId ? Number(buildingId) : undefined,
+    customerId: customerId ? Number(customerId) : undefined,
     meterReadingsFrom: meterReadingsFilterFrom ?? undefined,
     meterReadingsTo: meterReadingsFilterTo ?? undefined,
   });
