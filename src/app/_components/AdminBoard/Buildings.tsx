@@ -24,16 +24,16 @@ export function Buildings() {
   return (
     <div className="">
       {isFetching && <Spinner />}
-      {buildingData?.map((customer) => (
+      {buildingData?.map((building) => (
         <div
           className="flex flex-row items-center justify-between border px-2 py-1"
-          key={customer.id}
+          key={building.id}
         >
-          {customer.name}
+          {building.name}
           <Button
             disabled={isPendingRemoveBuilding}
             onClick={async () => {
-              await mutateAsyncDeleteBuilding({ id: customer.id });
+              await mutateAsyncDeleteBuilding({ id: building.id });
               await refetch();
             }}
           >
@@ -42,7 +42,7 @@ export function Buildings() {
         </div>
       ))}
       <div>
-        <Button onClick={() => setOpenModal(() => true)}>add customer</Button>
+        <Button onClick={() => setOpenModal(() => true)}>add building</Button>
       </div>
       <Modal
         show={openModal}

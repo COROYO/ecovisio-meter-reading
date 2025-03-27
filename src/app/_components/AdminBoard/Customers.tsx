@@ -29,7 +29,7 @@ export function Customers() {
           className="flex flex-row items-center justify-between border px-2 py-1"
           key={customer.id}
         >
-          {customer.name}
+          {customer.id}: {customer.name}
           <Button
             disabled={isPendingRemoveCustomer}
             onClick={async () => {

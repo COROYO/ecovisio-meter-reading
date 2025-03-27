@@ -138,9 +138,17 @@ export function MeterReadings({ buildingId, customerId }: MeterReadingsProps) {
               </div>
               <Datepicker
                 value={newMeterReadingDate}
-                onChange={(newDate) =>
-                  setNewMeterReadingDate(newDate ? newDate : new Date())
-                }
+                onChange={(newDate) => {
+                  if (newDate) {
+                    const adjustedDate = new Date(newDate);
+                    adjustedDate.setHours(13, 0, 0, 0); // Set time to 13:00:00.000
+                    setNewMeterReadingDate(adjustedDate);
+                  } else {
+                    const defaultDate = new Date();
+                    defaultDate.setHours(13, 0, 0, 0); // Set default time to 13:00:00.000
+                    setNewMeterReadingDate(defaultDate);
+                  }
+                }}
               />
             </div>
             <div>

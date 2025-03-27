@@ -3,6 +3,7 @@
 import { TabItem, Tabs } from "flowbite-react";
 import { Buildings } from "./Buildings";
 import { Customers } from "./Customers";
+import { Meters } from "./Meters";
 
 export function AdminBoard() {
   return (
@@ -16,6 +17,9 @@ export function AdminBoard() {
         </TabItem>
         <TabItem title="Buildings">
           <Buildings />
+        </TabItem>
+        <TabItem title="Meters">
+          <Meters />
         </TabItem>
       </Tabs>
     </div>

@@ -35,7 +35,6 @@ export const meterRouter = createTRPCRouter({
       ),
     )
     .query(async ({ ctx, input }) => {
-      console.log("input?.customerId", input?.customerId);
       const meterReading = await ctx.db.meter.findMany({
         include: {
           meterReadings: {
@@ -70,6 +69,34 @@ export const meterRouter = createTRPCRouter({
       });
 
       return meterReading ?? null;
+    }),
+
+  addNewMeter: publicProcedure
+    .input(
+      z.object({
+        identifier: z.string(),
+        buildingId: z.number(),
+        customerId: z.number(),
+      }),
+    )
+    .mutation(async ({ ctx, input }) => {
+      return ctx.db.meter.create({
+        data: {
+          buildingId: input.buildingId,
+          customerId: input.customerId,
+          identifier: input.identifier,
+        },
+      });
+    }),
+
+  deleteMeter: publicProcedure
+    .input(z.object({ id: z.number() }))
+    .mutation(async ({ ctx, input }) => {
+      return ctx.db.meter.delete({
+        where: {
+          id: input.id,
+        },
+      });
     }),
 
   addNewMeterReading: publicProcedure
@@ -138,8 +165,8 @@ export const meterRouter = createTRPCRouter({
       const customerMeters = await ctx.db.meter.findMany({
         include: {
           meterReadings: {
-            orderBy: { readingDate: "desc" },
-            take: 2,
+            orderBy: { readingDate: "desc" }, // Order by latest reading date
+            take: 2, // Take only the 2 latest readings
           },
         },
         where: {
@@ -149,21 +176,19 @@ export const meterRouter = createTRPCRouter({
 
       if (customerMeters.length === 0) return 0;
 
-      const buildingMetersWithoutCurrentMonthReading = customerMeters.filter(
-        (meter) => {
-          const filteredReadings = meter.meterReadings.filter((reading) => {
+      const customerMetersHaveCurrentMonthAndYearReading = customerMeters.every(
+        (meter) =>
+          meter.meterReadings.some((reading) => {
             return (
-              reading.readingDate.getMonth() !== new Date().getMonth() ||
-              reading.readingDate.getFullYear() !== new Date().getFullYear()
+              reading.readingDate.getMonth() === new Date().getMonth() &&
+              reading.readingDate.getFullYear() === new Date().getFullYear()
             );
-          });
-          return filteredReadings.length > 0;
-        },
+          }),
       );
 
-      if (buildingMetersWithoutCurrentMonthReading.length > 0) return 0;
+      if (!customerMetersHaveCurrentMonthAndYearReading) return 0;
 
-      const buildingConsumption = customerMeters.reduce((acc, meter) => {
+      const customerConsumption = customerMeters.reduce((acc, meter) => {
         const latestReading = meter.meterReadings[0];
         const previousReading = meter.meterReadings[1];
         if (previousReading?.value && latestReading?.value) {
@@ -171,6 +196,6 @@ export const meterRouter = createTRPCRouter({
         }
         return acc;
       }, 0);
-      return buildingConsumption;
+      return customerConsumption;
     }),
 });
