@@ -134,19 +134,17 @@ export const meterRouter = createTRPCRouter({
 
       if (buildingMeters.length === 0) return 0;
 
-      const buildingMetersWithoutCurrentMonthReading = buildingMeters.filter(
-        (meter) => {
-          const filteredReadings = meter.meterReadings.filter((reading) => {
+      const buildingMetersHaveCurrentMonthAndYearReading = buildingMeters.every(
+        (meter) =>
+          meter.meterReadings.some((reading) => {
             return (
-              reading.readingDate.getMonth() !== new Date().getMonth() ||
-              reading.readingDate.getFullYear() !== new Date().getFullYear()
+              reading.readingDate.getMonth() === new Date().getMonth() &&
+              reading.readingDate.getFullYear() === new Date().getFullYear()
             );
-          });
-          return filteredReadings.length > 0;
-        },
+          }),
       );
 
-      if (buildingMetersWithoutCurrentMonthReading.length > 0) return 0;
+      if (!buildingMetersHaveCurrentMonthAndYearReading) return 0;
 
       const buildingConsumption = buildingMeters.reduce((acc, meter) => {
         const latestReading = meter.meterReadings[0];
