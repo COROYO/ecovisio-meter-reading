@@ -11,6 +11,7 @@ import {
 } from "flowbite-react";
 import { useState } from "react";
 import { api } from "~/trpc/react";
+import { readingIsInCurrentMonthAndYear } from "../../lib/utils";
 
 type MeterReadingsProps = {
   buildingId: string;
@@ -60,7 +61,7 @@ export function MeterReadings({ buildingId, customerId }: MeterReadingsProps) {
 
   return (
     <>
-      <div className="flex w-full flex-row justify-center">
+      <div className="flex w-full flex-row justify-center overflow-hidden">
         {isLoading ? (
           <Spinner />
         ) : (
@@ -91,11 +92,33 @@ export function MeterReadings({ buildingId, customerId }: MeterReadingsProps) {
                 <Table.HeadCell>Zählernummer</Table.HeadCell>
                 <Table.HeadCell>Kunde</Table.HeadCell>
                 <Table.HeadCell>Bemerkung</Table.HeadCell>
-                <Table.HeadCell>Zählerstand</Table.HeadCell>
+                <Table.HeadCell>Zählerstand davor</Table.HeadCell>
+                <Table.HeadCell>Aktuellster Zählerstand</Table.HeadCell>
               </Table.Head>
               <Table.Body className="divide-y">
                 {data?.map((meter) => (
-                  <Table.Row key={meter.id}>
+                  <Table.Row
+                    key={meter.id}
+                    className={
+                      !(
+                        Array.isArray(meter.meterReadings) &&
+                        meter.meterReadings[0] &&
+                        readingIsInCurrentMonthAndYear({
+                          readingDate: new Date(
+                            meter.meterReadings[0].readingDate,
+                          ),
+                        })
+                      )
+                        ? "border-4 border-red-300"
+                        : Array.isArray(meter.meterReadings) &&
+                            meter.meterReadings[0] &&
+                            meter.meterReadings[1] &&
+                            meter.meterReadings[1].value <
+                              0.85 * meter.meterReadings[0].value
+                          ? "bg-red-300"
+                          : ""
+                    }
+                  >
                     <Table.Cell>{meter.id}</Table.Cell>
                     <Table.Cell>{meter.meterPoint}</Table.Cell>
                     <Table.Cell>{meter.description}</Table.Cell>
@@ -105,6 +128,19 @@ export function MeterReadings({ buildingId, customerId }: MeterReadingsProps) {
                     <Table.Cell>{meter.identifier}</Table.Cell>
                     <Table.Cell>{meter.customer?.name}</Table.Cell>
                     <Table.Cell>{meter.meterReadings[0]?.remarks}</Table.Cell>
+                    <Table.Cell>
+                      <button
+                        onClick={() => {
+                          setSelectedMeterId(meter.id);
+                          setOpenModal(true);
+                        }}
+                      >
+                        {meter.meterReadings[1]?.readingDate &&
+                        meter.meterReadings[1]?.value
+                          ? `${meter.meterReadings[1]?.readingDate.toLocaleDateString().slice(0, 10)}: ${meter.meterReadings[1]?.value}`
+                          : "no reading available"}
+                      </button>
+                    </Table.Cell>
                     <Table.Cell>
                       <button
                         onClick={() => {

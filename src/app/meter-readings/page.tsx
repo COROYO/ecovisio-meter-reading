@@ -1,5 +1,5 @@
 import { HydrateClient } from "~/trpc/server";
-import { MeterReadings } from "../_components/LatestMeterReading";
+import { MeterReadings } from "../_components/MeterReadings";
 
 type MeterReadingsPageProps = {
   searchParams: {

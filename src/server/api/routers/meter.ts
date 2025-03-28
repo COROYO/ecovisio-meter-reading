@@ -1,6 +1,7 @@
 import { z } from "zod";
 
 import { createTRPCRouter, publicProcedure } from "~/server/api/trpc";
+import { readingIsInCurrentMonthAndYear } from "../../../lib/utils";
 
 export const meterRouter = createTRPCRouter({
   // example code, don't delete
@@ -54,7 +55,7 @@ export const meterRouter = createTRPCRouter({
               : {}),
 
             orderBy: { readingDate: "desc" },
-            take: 1,
+            take: 2,
           },
           building: true,
           component: true,
@@ -137,10 +138,7 @@ export const meterRouter = createTRPCRouter({
       const buildingMetersHaveCurrentMonthAndYearReading = buildingMeters.every(
         (meter) =>
           meter.meterReadings.some((reading) => {
-            return (
-              reading.readingDate.getMonth() === new Date().getMonth() &&
-              reading.readingDate.getFullYear() === new Date().getFullYear()
-            );
+            return readingIsInCurrentMonthAndYear(reading);
           }),
       );
 
@@ -177,10 +175,7 @@ export const meterRouter = createTRPCRouter({
       const customerMetersHaveCurrentMonthAndYearReading = customerMeters.every(
         (meter) =>
           meter.meterReadings.some((reading) => {
-            return (
-              reading.readingDate.getMonth() === new Date().getMonth() &&
-              reading.readingDate.getFullYear() === new Date().getFullYear()
-            );
+            return readingIsInCurrentMonthAndYear(reading);
           }),
       );
 
