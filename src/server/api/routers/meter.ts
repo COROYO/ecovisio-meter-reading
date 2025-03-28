@@ -125,7 +125,7 @@ export const meterRouter = createTRPCRouter({
         include: {
           meterReadings: {
             orderBy: { readingDate: "desc" },
-            take: 2,
+            take: 3, // Take the 3 latest readings
           },
         },
         where: {
@@ -133,7 +133,8 @@ export const meterRouter = createTRPCRouter({
         },
       });
 
-      if (buildingMeters.length === 0) return 0;
+      if (buildingMeters.length === 0)
+        return { latestConsumption: 0, previousConsumption: 0 };
 
       const buildingMetersHaveCurrentMonthAndYearReading = buildingMeters.every(
         (meter) =>
@@ -142,17 +143,30 @@ export const meterRouter = createTRPCRouter({
           }),
       );
 
-      if (!buildingMetersHaveCurrentMonthAndYearReading) return 0;
+      if (!buildingMetersHaveCurrentMonthAndYearReading)
+        return { latestConsumption: 0, previousConsumption: 0 };
 
-      const buildingConsumption = buildingMeters.reduce((acc, meter) => {
-        const latestReading = meter.meterReadings[0];
-        const previousReading = meter.meterReadings[1];
-        if (previousReading?.value && latestReading?.value) {
-          acc += latestReading.value - previousReading.value;
-        }
-        return acc;
-      }, 0);
-      return buildingConsumption;
+      const result = buildingMeters.reduce(
+        (acc, meter) => {
+          const [latestReading, previousReading, thirdReading] =
+            meter.meterReadings;
+
+          if (previousReading?.value && latestReading?.value) {
+            acc.latestConsumption +=
+              latestReading.value - previousReading.value;
+          }
+
+          if (thirdReading?.value && previousReading?.value) {
+            acc.previousConsumption +=
+              previousReading.value - thirdReading.value;
+          }
+
+          return acc;
+        },
+        { latestConsumption: 0, previousConsumption: 0 },
+      );
+
+      return result;
     }),
 
   getLatestCustomerConsumption: publicProcedure

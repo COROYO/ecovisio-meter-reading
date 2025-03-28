@@ -17,12 +17,15 @@ export function BuildingRow({ buildingId, buildingName }: BuildingRowProps) {
   return (
     <Table.Row
       key={buildingId}
-      className={`cursor-pointer hover:bg-gray-100 ${data === 0 ? "bg-red-100" : ""}`}
+      className={`cursor-pointer hover:bg-gray-100 ${data?.latestConsumption === 0 ? "bg-red-100" : ""}`}
       onClick={() => router.push(`/meter-readings?buildingId=${buildingId}`)}
     >
       <Table.Cell>{buildingName}</Table.Cell>
       <Table.Cell className="text-end">
-        {!isLoading ? data : <Spinner />}
+        {!isLoading ? data?.previousConsumption : <Spinner />}
+      </Table.Cell>
+      <Table.Cell className="text-end">
+        {!isLoading ? data?.latestConsumption : <Spinner />}
       </Table.Cell>
     </Table.Row>
   );

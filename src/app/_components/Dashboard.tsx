@@ -19,7 +19,8 @@ export function Dashboard() {
           <Table>
             <Table.Head>
               <Table.HeadCell>Gebäude</Table.HeadCell>
-              <Table.HeadCell>Verbrauch</Table.HeadCell>
+              <Table.HeadCell>Verbrauch davor</Table.HeadCell>
+              <Table.HeadCell>aktuellster Verbrauch</Table.HeadCell>
             </Table.Head>
             <Table.Body className="divide-y">
               {buildingsData?.map((building) => (
