@@ -2,59 +2,70 @@
 // learn more about it in the docs: https://pris.ly/d/prisma-schema
 
 generator client {
-    provider = "prisma-client-js"
+  provider = "prisma-client-js"
 }
 
 datasource db {
-    provider = "mysql"
-    url      = env("DATABASE_URL")
+  provider          = "mysql"
+  url               = env("DATABASE_URL")
+  shadowDatabaseUrl = env("SHADOW_DATABASE_URL")
 }
 
 model Meter {
-  id                Int           @id @default(autoincrement())
-  identifier        String        @unique
-  description       String?
-  building          Building?     @relation(fields: [buildingId], references: [id])
-  buildingId        Int?
-  component         Component?    @relation(fields: [componentId], references: [id])
-  componentId       Int?
-  customer          Customer?     @relation(fields: [customerId], references: [id])
-  customerId        Int?
-  meterPoint        String?
-  room              String?
-  
+  id          Int        @id @default(autoincrement())
+  identifier  String     @unique
+  description String?
+  building    Building?  @relation(fields: [buildingId], references: [id])
+  buildingId  Int?
+  component   Component? @relation(fields: [componentId], references: [id])
+  componentId Int?
+  customer    Customer?  @relation(fields: [customerId], references: [id])
+  customerId  Int?
+  meterPoint  String?
+  room        String?
+
   // Self-referencing relation
-  parentMeter       Meter?        @relation("ParentChildMeter", fields: [parentMeterId], references: [id])
-  parentMeterId     Int?
-  childMeters       Meter[]       @relation("ParentChildMeter")  // The opposite side of the relation
-  
-  customerPoint     String?
-  meterReadings     MeterReading[]
+  parentMeter   Meter?  @relation("ParentChildMeter", fields: [parentMeterId], references: [id])
+  parentMeterId Int?
+  childMeters   Meter[] @relation("ParentChildMeter") // The opposite side of the relation
+
+  customerPoint String?
+  meterReadings MeterReading[]
 }
 
 model MeterReading {
-  id           Int      @id @default(autoincrement())
-  meter        Meter     @relation(fields: [meterId], references: [id])
-  meterId      Int
-  readingDate  DateTime
-  value        Float
-  remarks      String?
+  id          Int      @id @default(autoincrement())
+  meter       Meter    @relation(fields: [meterId], references: [id])
+  meterId     Int
+  readingDate DateTime
+  value       Float
+  remarks     String?
 }
 
 model Customer {
-  id      Int      @id @default(autoincrement())
-  name    String   @unique
-  meters  Meter[]
+  id     Int     @id @default(autoincrement())
+  name   String  @unique
+  meters Meter[]
 }
 
 model Building {
-  id      Int      @id @default(autoincrement())
-  name    String   @unique
-  meters  Meter[]
+  id        Int        @id @default(autoincrement())
+  name      String     @unique
+  meters    Meter[]
+  purchases Purchase[]
 }
 
 model Component {
-  id      Int      @id @default(autoincrement())
-  name    String   @unique
-  meters  Meter[]
+  id     Int     @id @default(autoincrement())
+  name   String  @unique
+  meters Meter[]
+}
+
+model Purchase {
+  id            Int      @id @default(autoincrement())
+  kwh           Float
+  date          DateTime
+  invoiceNumber Int
+  building      Building @relation(fields: [buildingId], references: [id])
+  buildingId    Int
 }

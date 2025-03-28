@@ -9,7 +9,7 @@
 
 # On Linux and macOS you can run this script directly - `./start-database.sh`
 
-DB_CONTAINER_NAME="ecovisio-meter-reading-mysql"
+DB_CONTAINER_NAME="ecovisio-meter-reading-mysql-shadow2"
 
 if ! [ -x "$(command -v docker)" ]; then
   echo -e "Docker is not installed. Please install docker and try again.\nDocker install guide: https://docs.docker.com/engine/install/"
@@ -51,4 +51,4 @@ docker run -d \
   -e MYSQL_ROOT_PASSWORD="$DB_PASSWORD" \
   -e MYSQL_DATABASE=ecovisio-meter-reading \
   -p "$DB_PORT":3306 \
-  docker.io/mysql && echo "Database container '$DB_CONTAINER_NAME' was successfully created"
+  docker.io/mysql && echo "Database container '$DB_CONTAINER_NAME' was successfully created" && echo "db pw: '$DB_PASSWORD'"
