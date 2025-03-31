@@ -61,103 +61,108 @@ export function MeterReadings({ buildingId, customerId }: MeterReadingsProps) {
 
   return (
     <>
-      <div className="flex w-full flex-row justify-center overflow-hidden">
+      <div className="p-4">
         {isLoading ? (
           <Spinner />
         ) : (
-          <div className="overflow-x-auto">
-            Filter:
-            <div>
-              from:{" "}
-              <Datepicker
-                value={meterReadingsFilterFrom}
-                onChange={(newDate) => setMeterReadingsFilterFrom(newDate)}
-              />
+          <div>
+            <div className="mb-4 flex flex-col gap-2 sm:flex-row sm:items-center">
+              <div>
+                <Label htmlFor="filterFrom" value="From:" />
+                <Datepicker
+                  id="filterFrom"
+                  value={meterReadingsFilterFrom}
+                  onChange={(newDate) => setMeterReadingsFilterFrom(newDate)}
+                />
+              </div>
+              <div>
+                <Label htmlFor="filterTo" value="To:" />
+                <Datepicker
+                  id="filterTo"
+                  value={meterReadingsFilterTo}
+                  onChange={(newDate) => setMeterReadingsFilterTo(newDate)}
+                />
+              </div>
             </div>
-            <div>
-              to:{" "}
-              <Datepicker
-                value={meterReadingsFilterTo}
-                onChange={(newDate) => setMeterReadingsFilterTo(newDate)}
-              />
+            <div className="overflow-x-auto">
+              <Table className="min-w-full text-left text-sm text-gray-500 dark:text-gray-400">
+                <Table.Head className="bg-gray-50 dark:bg-gray-700">
+                  <Table.HeadCell>Laufnummer</Table.HeadCell>
+                  <Table.HeadCell>Zählerpunkt</Table.HeadCell>
+                  <Table.HeadCell>Beschreibung</Table.HeadCell>
+                  <Table.HeadCell>Gebäude</Table.HeadCell>
+                  <Table.HeadCell>Bauteil</Table.HeadCell>
+                  <Table.HeadCell>Raum</Table.HeadCell>
+                  <Table.HeadCell>Zählernummer</Table.HeadCell>
+                  <Table.HeadCell>Kunde</Table.HeadCell>
+                  <Table.HeadCell>Bemerkung</Table.HeadCell>
+                  <Table.HeadCell>Zählerstand davor</Table.HeadCell>
+                  <Table.HeadCell>Aktuellster Zählerstand</Table.HeadCell>
+                </Table.Head>
+                <Table.Body className="divide-y">
+                  {data?.map((meter) => (
+                    <Table.Row
+                      key={meter.id}
+                      className={
+                        !(
+                          Array.isArray(meter.meterReadings) &&
+                          meter.meterReadings[0] &&
+                          readingIsInCurrentMonthAndYear({
+                            readingDate: new Date(
+                              meter.meterReadings[0].readingDate,
+                            ),
+                          })
+                        )
+                          ? "border-4 border-red-300"
+                          : Array.isArray(meter.meterReadings) &&
+                              meter.meterReadings[0] &&
+                              meter.meterReadings[1] &&
+                              meter.meterReadings[1].value <
+                                0.85 * meter.meterReadings[0].value
+                            ? "bg-red-300"
+                            : ""
+                      }
+                    >
+                      <Table.Cell>{meter.id}</Table.Cell>
+                      <Table.Cell>{meter.meterPoint}</Table.Cell>
+                      <Table.Cell>{meter.description}</Table.Cell>
+                      <Table.Cell>{meter.building?.name}</Table.Cell>
+                      <Table.Cell>{meter.component?.name}</Table.Cell>
+                      <Table.Cell>{meter.room}</Table.Cell>
+                      <Table.Cell>{meter.identifier}</Table.Cell>
+                      <Table.Cell>{meter.customer?.name}</Table.Cell>
+                      <Table.Cell>{meter.meterReadings[0]?.remarks}</Table.Cell>
+                      <Table.Cell>
+                        <button
+                          onClick={() => {
+                            setSelectedMeterId(meter.id);
+                            setOpenModal(true);
+                          }}
+                        >
+                          {meter.meterReadings[1]?.readingDate &&
+                          meter.meterReadings[1]?.value
+                            ? `${meter.meterReadings[1]?.readingDate.toLocaleDateString().slice(0, 10)}: ${meter.meterReadings[1]?.value}`
+                            : "no reading available"}
+                        </button>
+                      </Table.Cell>
+                      <Table.Cell>
+                        <button
+                          onClick={() => {
+                            setSelectedMeterId(meter.id);
+                            setOpenModal(true);
+                          }}
+                        >
+                          {meter.meterReadings[0]?.readingDate &&
+                          meter.meterReadings[0]?.value
+                            ? `${meter.meterReadings[0]?.readingDate.toLocaleDateString().slice(0, 10)}: ${meter.meterReadings[0]?.value}`
+                            : "no reading available"}
+                        </button>
+                      </Table.Cell>
+                    </Table.Row>
+                  ))}
+                </Table.Body>
+              </Table>
             </div>
-            <Table>
-              <Table.Head>
-                <Table.HeadCell>Laufnummer</Table.HeadCell>
-                <Table.HeadCell>Zählerpunkt</Table.HeadCell>
-                <Table.HeadCell>Beschreibung</Table.HeadCell>
-                <Table.HeadCell>Gebäude</Table.HeadCell>
-                <Table.HeadCell>Bauteil</Table.HeadCell>
-                <Table.HeadCell>Raum</Table.HeadCell>
-                <Table.HeadCell>Zählernummer</Table.HeadCell>
-                <Table.HeadCell>Kunde</Table.HeadCell>
-                <Table.HeadCell>Bemerkung</Table.HeadCell>
-                <Table.HeadCell>Zählerstand davor</Table.HeadCell>
-                <Table.HeadCell>Aktuellster Zählerstand</Table.HeadCell>
-              </Table.Head>
-              <Table.Body className="divide-y">
-                {data?.map((meter) => (
-                  <Table.Row
-                    key={meter.id}
-                    className={
-                      !(
-                        Array.isArray(meter.meterReadings) &&
-                        meter.meterReadings[0] &&
-                        readingIsInCurrentMonthAndYear({
-                          readingDate: new Date(
-                            meter.meterReadings[0].readingDate,
-                          ),
-                        })
-                      )
-                        ? "border-4 border-red-300"
-                        : Array.isArray(meter.meterReadings) &&
-                            meter.meterReadings[0] &&
-                            meter.meterReadings[1] &&
-                            meter.meterReadings[1].value <
-                              0.85 * meter.meterReadings[0].value
-                          ? "bg-red-300"
-                          : ""
-                    }
-                  >
-                    <Table.Cell>{meter.id}</Table.Cell>
-                    <Table.Cell>{meter.meterPoint}</Table.Cell>
-                    <Table.Cell>{meter.description}</Table.Cell>
-                    <Table.Cell>{meter.building?.name}</Table.Cell>
-                    <Table.Cell>{meter.component?.name}</Table.Cell>
-                    <Table.Cell>{meter.room}</Table.Cell>
-                    <Table.Cell>{meter.identifier}</Table.Cell>
-                    <Table.Cell>{meter.customer?.name}</Table.Cell>
-                    <Table.Cell>{meter.meterReadings[0]?.remarks}</Table.Cell>
-                    <Table.Cell>
-                      <button
-                        onClick={() => {
-                          setSelectedMeterId(meter.id);
-                          setOpenModal(true);
-                        }}
-                      >
-                        {meter.meterReadings[1]?.readingDate &&
-                        meter.meterReadings[1]?.value
-                          ? `${meter.meterReadings[1]?.readingDate.toLocaleDateString().slice(0, 10)}: ${meter.meterReadings[1]?.value}`
-                          : "no reading available"}
-                      </button>
-                    </Table.Cell>
-                    <Table.Cell>
-                      <button
-                        onClick={() => {
-                          setSelectedMeterId(meter.id);
-                          setOpenModal(true);
-                        }}
-                      >
-                        {meter.meterReadings[0]?.readingDate &&
-                        meter.meterReadings[0]?.value
-                          ? `${meter.meterReadings[0]?.readingDate.toLocaleDateString().slice(0, 10)}: ${meter.meterReadings[0]?.value}`
-                          : "no reading available"}
-                      </button>
-                    </Table.Cell>
-                  </Table.Row>
-                ))}
-              </Table.Body>
-            </Table>
           </div>
         )}
       </div>

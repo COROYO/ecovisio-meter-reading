@@ -40,160 +40,163 @@ export function Dashboard() {
   );
 
   return (
-    <div>
-      <Card>
-        Gebäude
-        {isLoading ? (
-          <Spinner />
-        ) : (
-          <Table>
-            <Table.Head>
-              <Table.HeadCell>Gebäude</Table.HeadCell>
-              <Table.HeadCell>Verbrauch davor</Table.HeadCell>
-              <Table.HeadCell>aktuellster Verbrauch</Table.HeadCell>
-            </Table.Head>
-            <Table.Body className="divide-y">
-              {buildingsData?.map((building) => (
-                <BuildingRow
-                  key={building.id}
-                  buildingId={building.id}
-                  buildingName={building.name}
-                />
-              ))}
-            </Table.Body>
-          </Table>
-        )}
-      </Card>
-      <Card>
-        Kunden
-        {isLoadingCustomerData ? (
-          <Spinner />
-        ) : (
-          <Table>
-            <Table.Head>
-              <Table.HeadCell>Kunden</Table.HeadCell>
-              <Table.HeadCell>Verbrauch</Table.HeadCell>
-            </Table.Head>
-            <Table.Body className="divide-y">
-              {customerData?.map((customer) => (
-                <CustomerRow
-                  key={customer.id}
-                  customerId={customer.id}
-                  customerName={customer.name}
-                />
-              ))}
-            </Table.Body>
-          </Table>
-        )}
-      </Card>
-      <Card>
-        <div className="flex flex-row items-center justify-between">
-          <h2>Einkäufe</h2>
-          <Button onClick={() => setOpenModal(true)}>+</Button>
-        </div>
-        {isLoadingPurchaseData ? (
-          <Spinner />
-        ) : (
-          <Table>
-            <Table.Head>
-              <Table.HeadCell>Rechnungsnr</Table.HeadCell>
-              <Table.HeadCell>Einkaufsdatum</Table.HeadCell>
-              <Table.HeadCell>kwh</Table.HeadCell>
-            </Table.Head>
-            <Table.Body className="divide-y">
-              {purchaseData?.map((purchase) => (
-                <PurchaseRow
-                  key={purchase.id}
-                  date={purchase.date}
-                  invoiceNr={purchase.invoiceNumber}
-                  kwh={purchase.kwh}
-                />
-              ))}
-            </Table.Body>
-          </Table>
-        )}
-        <Modal
-          show={openModal}
-          size="md"
-          popup
-          onClose={() => setOpenModal(false)}
-          initialFocus={invoiceNumberRef}
-        >
-          <Modal.Header />
-          <Modal.Body>
-            {isLoading && <Spinner />}
-            {buildingsData && customerData && (
-              <div className="space-y-6">
-                <div>
-                  <div className="mb-2 block">
-                    <Label htmlFor="invoiceNr" value="invoice number" />
-                  </div>
-                  <TextInput
-                    value={newInvoiceNr}
-                    onChange={(e) => setNewInvoiceNr(Number(e.target.value))}
-                    id="invoiceNr"
-                    type="number"
-                    ref={invoiceNumberRef}
-                    required
+    <div className="min-h-screen bg-gray-100 p-6">
+      <h1 className="mb-6 text-2xl font-bold">Admin Dashboard</h1>
+      <div className="grid grid-cols-1 items-start gap-6 md:grid-cols-2 lg:grid-cols-3">
+        <Card className="max-h-[400px] overflow-y-auto">
+          <h2 className="mb-4 text-lg font-semibold">Gebäude</h2>
+          {isLoading ? (
+            <Spinner />
+          ) : (
+            <Table>
+              <Table.Head>
+                <Table.HeadCell>Gebäude</Table.HeadCell>
+                <Table.HeadCell>Verbrauch davor</Table.HeadCell>
+                <Table.HeadCell>aktuellster Verbrauch</Table.HeadCell>
+              </Table.Head>
+              <Table.Body className="divide-y">
+                {buildingsData?.map((building) => (
+                  <BuildingRow
+                    key={building.id}
+                    buildingId={building.id}
+                    buildingName={building.name}
                   />
-                </div>
-                <div>
-                  <div className="mb-2 block">
-                    <Label htmlFor="kwh" value="KW/H" />
-                  </div>
-                  <TextInput
-                    value={newKwh}
-                    onChange={(e) => setNewKwh(Number(e.target.value))}
-                    id="kwh"
-                    type="number"
-                    required
+                ))}
+              </Table.Body>
+            </Table>
+          )}
+        </Card>
+        <Card className="max-h-[400px] overflow-y-auto">
+          <h2 className="mb-4 text-lg font-semibold">Kunden</h2>
+          {isLoadingCustomerData ? (
+            <Spinner />
+          ) : (
+            <Table>
+              <Table.Head>
+                <Table.HeadCell>Kunden</Table.HeadCell>
+                <Table.HeadCell>Verbrauch</Table.HeadCell>
+              </Table.Head>
+              <Table.Body className="divide-y">
+                {customerData?.map((customer) => (
+                  <CustomerRow
+                    key={customer.id}
+                    customerId={customer.id}
+                    customerName={customer.name}
                   />
-                </div>
-                <div>
-                  <Datepicker
-                    value={newPurchaseDate}
-                    onChange={(newDate) => setNewPurchseData(newDate)}
+                ))}
+              </Table.Body>
+            </Table>
+          )}
+        </Card>
+        <Card className="max-h-[400px] overflow-y-auto">
+          <div className="mb-4 flex flex-row items-center justify-between">
+            <h2 className="text-lg font-semibold">Einkäufe</h2>
+            <Button onClick={() => setOpenModal(true)}>+</Button>
+          </div>
+          {isLoadingPurchaseData ? (
+            <Spinner />
+          ) : (
+            <Table>
+              <Table.Head>
+                <Table.HeadCell>Rechnungsnr</Table.HeadCell>
+                <Table.HeadCell>Einkaufsdatum</Table.HeadCell>
+                <Table.HeadCell>kwh</Table.HeadCell>
+              </Table.Head>
+              <Table.Body className="divide-y">
+                {purchaseData?.map((purchase) => (
+                  <PurchaseRow
+                    key={purchase.id}
+                    date={purchase.date}
+                    invoiceNr={purchase.invoiceNumber}
+                    kwh={purchase.kwh}
                   />
-                </div>
-                <div className="max-w-md">
-                  <div className="mb-2 block">
-                    <Label htmlFor="buildings">Select building</Label>
+                ))}
+              </Table.Body>
+            </Table>
+          )}
+          <Modal
+            show={openModal}
+            size="md"
+            popup
+            onClose={() => setOpenModal(false)}
+            initialFocus={invoiceNumberRef}
+          >
+            <Modal.Header />
+            <Modal.Body>
+              {isLoading && <Spinner />}
+              {buildingsData && customerData && (
+                <div className="space-y-6">
+                  <div>
+                    <div className="mb-2 block">
+                      <Label htmlFor="invoiceNr" value="invoice number" />
+                    </div>
+                    <TextInput
+                      value={newInvoiceNr}
+                      onChange={(e) => setNewInvoiceNr(Number(e.target.value))}
+                      id="invoiceNr"
+                      type="number"
+                      ref={invoiceNumberRef}
+                      required
+                    />
                   </div>
-                  <Select
-                    id="buildings"
-                    onChange={(e) => setNewBuildingId(Number(e.target.value))}
-                  >
-                    {buildingsData.map((building) => (
-                      <option key={building.id} value={building.id}>
-                        {building.name}
-                      </option>
-                    ))}
-                  </Select>
-                </div>
+                  <div>
+                    <div className="mb-2 block">
+                      <Label htmlFor="kwh" value="KW/H" />
+                    </div>
+                    <TextInput
+                      value={newKwh}
+                      onChange={(e) => setNewKwh(Number(e.target.value))}
+                      id="kwh"
+                      type="number"
+                      required
+                    />
+                  </div>
+                  <div>
+                    <Datepicker
+                      value={newPurchaseDate}
+                      onChange={(newDate) => setNewPurchseData(newDate)}
+                    />
+                  </div>
+                  <div className="max-w-md">
+                    <div className="mb-2 block">
+                      <Label htmlFor="buildings">Select building</Label>
+                    </div>
+                    <Select
+                      id="buildings"
+                      onChange={(e) => setNewBuildingId(Number(e.target.value))}
+                    >
+                      {buildingsData.map((building) => (
+                        <option key={building.id} value={building.id}>
+                          {building.name}
+                        </option>
+                      ))}
+                    </Select>
+                  </div>
 
-                <div className="w-full">
-                  <Button
-                    disabled={isPendingAddPurchase}
-                    onClick={async () => {
-                      await mutateAsyncAddPurchase({
-                        date: newPurchaseDate ?? new Date(),
-                        buildingId: newBuildingId ?? 1,
-                        invoiceNr: newInvoiceNr ?? 1,
-                        kwh: newKwh ?? 1,
-                      });
-                      await refetch();
-                      setOpenModal(false);
-                    }}
-                  >
-                    Add Purchase
-                  </Button>
-                  {isPendingAddPurchase && <Spinner />}
+                  <div className="w-full">
+                    <Button
+                      disabled={isPendingAddPurchase}
+                      onClick={async () => {
+                        await mutateAsyncAddPurchase({
+                          date: newPurchaseDate ?? new Date(),
+                          buildingId: newBuildingId ?? 1,
+                          invoiceNr: newInvoiceNr ?? 1,
+                          kwh: newKwh ?? 1,
+                        });
+                        await refetch();
+                        setOpenModal(false);
+                      }}
+                    >
+                      Add Purchase
+                    </Button>
+                    {isPendingAddPurchase && <Spinner />}
+                  </div>
                 </div>
-              </div>
-            )}
-          </Modal.Body>
-        </Modal>
-      </Card>
+              )}
+            </Modal.Body>
+          </Modal>
+        </Card>
+      </div>
     </div>
   );
 }

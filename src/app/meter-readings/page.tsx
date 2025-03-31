@@ -13,10 +13,8 @@ export default async function MeterReadingsPage({
 }: MeterReadingsPageProps) {
   return (
     <HydrateClient>
-      <main className="flex min-h-screen flex-col items-center justify-center">
-        <div className="container flex flex-col items-center justify-center">
-          <MeterReadings buildingId={buildingId} customerId={customerId} />
-        </div>
+      <main className="">
+        <MeterReadings buildingId={buildingId} customerId={customerId} />
       </main>
     </HydrateClient>
   );

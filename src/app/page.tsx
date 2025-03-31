@@ -8,11 +8,11 @@ export default function Home() {
     <HydrateClient>
       <main className="flex min-h-screen flex-col items-center justify-center">
         <div className="container flex flex-col items-center justify-center gap-4">
-          <Button href="admin">
-            Admin Zugang (ACHTUNG öffentlich, warnung erst entfernen wenn Admin
-            bereich geschützt!)
-          </Button>
           <Card>
+            <Button href="/admin">
+              Admin Zugang (ACHTUNG öffentlich, warnung erst entfernen wenn
+              Admin bereich geschützt!)
+            </Button>
             <Link href={"/meter-readings"}>
               <Button>meter readings list</Button>
             </Link>
